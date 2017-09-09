@@ -13,7 +13,7 @@ from flask import Flask, render_template, request, flash, session, redirect, url
 from werkzeug.security import generate_password_hash, check_password_hash
 #from flask_migrate import Migrate
 from models import *
-
+from config import SQLALCHEMY_DATABASE_URI
 #engine = create_engine('sqlite:///test.db', echo=True)
 #app = Flask(__name__)
 #app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
@@ -38,12 +38,7 @@ from models import *
 #Session(app)
 
 app = Flask(__name__)
-SQLALCHEMY_DATABASE_URI = "mysql+mysqlconnector://{username}:{password}@{hostname}/{databasename}".format(
-    username="maplespreadsheet",
-    password="mewmew79",
-    hostname="maplespreadsheet.mysql.pythonanywhere-services.com",
-    databasename="maplespreadsheet$votr",
-)
+
 app.config["SQLALCHEMY_DATABASE_URI"] = SQLALCHEMY_DATABASE_URI
 app.config["SQLALCHEMY_POOL_RECYCLE"] = 299
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
