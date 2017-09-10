@@ -25,9 +25,6 @@ $( "li.item-ii" ).find( "li" ).css( "background-color", "red" );
         var item1 = $(this).find(".icon").val();
         console.log(item1);
         $(this).find("#icon").attr("src",item1);
-        var item1 = $(this).find(".tooltipd").val();
-        console.log(item1);
-        $(this).find("#tooltip").attr("src",item1);
 
 
         });
@@ -65,6 +62,8 @@ $(document).on('click','#icon',function() {
     // hover starts code here
     //$(this).show();
 //    console.log('hi');
+    var item1 = $(this).parent().find(".tooltipd").val();
+    $(this).parent().find("#tooltip").attr("src",item1);
     $(this).parent().find("#tooltip").show();
 
 });
